@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs and databases
+*.log
+*.sqlite
+*.pid
+
+# Build files
+dist/
+build/
+.next/
+
+# Editor/IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Lock files (optional - include if you want to track them)
+# package-lock.json
+# yarn.lock
+
+# Uploads (if not tracking generated files)
+public/uploads/
