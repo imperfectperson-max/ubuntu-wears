@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 // Register User
 exports.register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, phonenumber, email, password } = req.body;
     
     // Check if user exists
     let user = await User.findOne({ email });
@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
     }
 
     // Create new user
-    user = new User({ name, email, password });
+    user = new User({ name, phonenumber, email, password });
     await user.save();
 
     // Generate JWT token
