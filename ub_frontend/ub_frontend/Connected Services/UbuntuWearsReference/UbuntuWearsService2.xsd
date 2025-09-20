@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ub_backend" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ServiceResponseOfUserItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="User" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:User" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfUserItb6xEvN" nillable="true" type="tns:ServiceResponseOfUserItb6xEvN" />
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="AdminManagements" nillable="true" type="tns:ArrayOfAdminManagement" />
+      <xs:element minOccurs="0" name="Carts" nillable="true" type="tns:ArrayOfCart" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reports" nillable="true" type="tns:ArrayOfReport" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressID" type="xs:int" />
+      <xs:element minOccurs="0" name="AddressName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfAdminManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdminManagement" nillable="true" type="tns:AdminManagement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdminManagement" nillable="true" type="tns:ArrayOfAdminManagement" />
+  <xs:complexType name="AdminManagement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdminManagement" nillable="true" type="tns:AdminManagement" />
+  <xs:complexType name="ArrayOfCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cart" nillable="true" type="tns:Cart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCart" nillable="true" type="tns:ArrayOfCart" />
+  <xs:complexType name="Cart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CartID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cart" nillable="true" type="tns:Cart" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carts" nillable="true" type="tns:ArrayOfCart" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItem" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfInvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceItem" nillable="true" type="tns:ArrayOfInvoiceItem" />
+  <xs:complexType name="InvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:Invoice" />
+      <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiscountAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrandTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItem" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Invoices" nillable="true" type="tns:ArrayOfInvoice" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
+      <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payments" nillable="true" type="tns:ArrayOfPayment" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="ArrayOfOrderItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderItem" nillable="true" type="tns:ArrayOfOrderItem" />
+  <xs:complexType name="OrderItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderItem" nillable="true" type="tns:OrderItem" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+  <xs:complexType name="ArrayOfWishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wishlist" nillable="true" type="tns:Wishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWishlist" nillable="true" type="tns:ArrayOfWishlist" />
+  <xs:complexType name="Wishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="WishlistID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wishlist" nillable="true" type="tns:Wishlist" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:complexType name="ArrayOfReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="tns:Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport" nillable="true" type="tns:ArrayOfReport" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneratedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="GeneratedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsArchived" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ServiceResponseOfArrayOfProductEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfProductEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfProductEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfProductEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfProductEntityItb6xEvN" />
+  <xs:complexType name="ArrayOfProductEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductEntity" nillable="true" type="tns:ProductEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductEntity" nillable="true" type="tns:ArrayOfProductEntity" />
+  <xs:complexType name="ProductEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductEntity" nillable="true" type="tns:ProductEntity" />
+  <xs:complexType name="ServiceResponseOfProductEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ProductEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ProductEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfProductEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfProductEntityItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfProductItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Product" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfProductItb6xEvN" nillable="true" type="tns:ServiceResponseOfProductItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfArrayOfCartItemItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCartItem" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfCartItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfCartItemItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfCartItemItb6xEvN" />
+  <xs:complexType name="ArrayOfCartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartItem" nillable="true" type="tns:CartItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartItem" nillable="true" type="tns:ArrayOfCartItem" />
+  <xs:complexType name="CartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CartID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductEntity" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CartItem" nillable="true" type="tns:CartItem" />
+  <xs:complexType name="ServiceResponseOfArrayOfOrderEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfOrderEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfOrderEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfOrderEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfOrderEntityItb6xEvN" />
+  <xs:complexType name="ArrayOfOrderEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderEntity" nillable="true" type="tns:OrderEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderEntity" nillable="true" type="tns:ArrayOfOrderEntity" />
+  <xs:complexType name="OrderEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItemEntity" />
+      <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserEntity" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderEntity" nillable="true" type="tns:OrderEntity" />
+  <xs:complexType name="ArrayOfOrderItemEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderItemEntity" nillable="true" type="tns:OrderItemEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderItemEntity" nillable="true" type="tns:ArrayOfOrderItemEntity" />
+  <xs:complexType name="OrderItemEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderItemEntity" nillable="true" type="tns:OrderItemEntity" />
+  <xs:complexType name="UserEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserEntity" nillable="true" type="tns:UserEntity" />
+  <xs:complexType name="ServiceResponseOfArrayOfOrderItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfOrder" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfOrder" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfOrderItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfOrderItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfOrderEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="OrderEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:OrderEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfOrderEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfOrderEntityItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfOrderItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Order" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:Order" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfOrderItb6xEvN" nillable="true" type="tns:ServiceResponseOfOrderItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfArrayOfWishlistItemItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfWishlistItem" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfWishlistItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfWishlistItemItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfWishlistItemItb6xEvN" />
+  <xs:complexType name="ArrayOfWishlistItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WishlistItem" nillable="true" type="tns:WishlistItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWishlistItem" nillable="true" type="tns:ArrayOfWishlistItem" />
+  <xs:complexType name="WishlistItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductEntity" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="WishlistID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WishlistItem" nillable="true" type="tns:WishlistItem" />
+  <xs:complexType name="ServiceResponseOfDashboardStatsItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DashboardStats" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:DashboardStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfDashboardStatsItb6xEvN" nillable="true" type="tns:ServiceResponseOfDashboardStatsItb6xEvN" />
+  <xs:complexType name="DashboardStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PendingOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSales" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalUsers" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DashboardStats" nillable="true" type="tns:DashboardStats" />
+  <xs:complexType name="ServiceResponseOfArrayOfUserEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfUserEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfUserEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfUserEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfUserEntityItb6xEvN" />
+  <xs:complexType name="ArrayOfUserEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserEntity" nillable="true" type="tns:UserEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserEntity" nillable="true" type="tns:ArrayOfUserEntity" />
+  <xs:complexType name="ServiceResponseOfInvoiceEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvoiceEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:InvoiceEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfInvoiceEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfInvoiceEntityItb6xEvN" />
+  <xs:complexType name="InvoiceEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:UserEntity" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrandTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItemEntity" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:OrderEntity" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceEntity" nillable="true" type="tns:InvoiceEntity" />
+  <xs:complexType name="ArrayOfInvoiceItemEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceItemEntity" nillable="true" type="tns:InvoiceItemEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceItemEntity" nillable="true" type="tns:ArrayOfInvoiceItemEntity" />
+  <xs:complexType name="InvoiceItemEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceID" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductEntity" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceItemEntity" nillable="true" type="tns:InvoiceItemEntity" />
+  <xs:complexType name="ServiceResponseOfArrayOfInvoiceEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfInvoiceEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfInvoiceEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfInvoiceEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfInvoiceEntityItb6xEvN" />
+  <xs:complexType name="ArrayOfInvoiceEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceEntity" nillable="true" type="tns:InvoiceEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceEntity" nillable="true" type="tns:ArrayOfInvoiceEntity" />
+  <xs:complexType name="ServiceResponseOfSalesReportItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SalesReport" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:SalesReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfSalesReportItb6xEvN" nillable="true" type="tns:ServiceResponseOfSalesReportItb6xEvN" />
+  <xs:complexType name="SalesReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AverageOrderValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SalesByCategories" nillable="true" type="tns:ArrayOfSalesByCategory" />
+      <xs:element minOccurs="0" name="SalesByDates" nillable="true" type="tns:ArrayOfSalesByDate" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TopSellingProducts" nillable="true" type="tns:ArrayOfTopSellingProduct" />
+      <xs:element minOccurs="0" name="TotalCustomers" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSales" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesReport" nillable="true" type="tns:SalesReport" />
+  <xs:complexType name="ArrayOfSalesByCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesByCategory" nillable="true" type="tns:SalesByCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesByCategory" nillable="true" type="tns:ArrayOfSalesByCategory" />
+  <xs:complexType name="SalesByCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalItems" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSales" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesByCategory" nillable="true" type="tns:SalesByCategory" />
+  <xs:complexType name="ArrayOfSalesByDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesByDate" nillable="true" type="tns:SalesByDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesByDate" nillable="true" type="tns:ArrayOfSalesByDate" />
+  <xs:complexType name="SalesByDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DailyOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="DailySales" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesByDate" nillable="true" type="tns:SalesByDate" />
+  <xs:complexType name="ArrayOfTopSellingProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TopSellingProduct" nillable="true" type="tns:TopSellingProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTopSellingProduct" nillable="true" type="tns:ArrayOfTopSellingProduct" />
+  <xs:complexType name="TopSellingProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantitySold" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRevenue" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TopSellingProduct" nillable="true" type="tns:TopSellingProduct" />
+  <xs:complexType name="ServiceResponseOfInventoryReportItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InventoryReport" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:InventoryReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfInventoryReportItb6xEvN" nillable="true" type="tns:ServiceResponseOfInventoryReportItb6xEvN" />
+  <xs:complexType name="InventoryReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InventoryItems" nillable="true" type="tns:ArrayOfInventoryItem" />
+      <xs:element minOccurs="0" name="LowStockProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="OutOfStockProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalInventoryValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalProducts" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InventoryReport" nillable="true" type="tns:InventoryReport" />
+  <xs:complexType name="ArrayOfInventoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventoryItem" nillable="true" type="tns:InventoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInventoryItem" nillable="true" type="tns:ArrayOfInventoryItem" />
+  <xs:complexType name="InventoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentStock" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InventoryItem" nillable="true" type="tns:InventoryItem" />
+  <xs:complexType name="ServiceResponseOfCustomerReportItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerReport" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:CustomerReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfCustomerReportItb6xEvN" nillable="true" type="tns:ServiceResponseOfCustomerReportItb6xEvN" />
+  <xs:complexType name="CustomerReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerActivities" nillable="true" type="tns:ArrayOfCustomerActivity" />
+      <xs:element minOccurs="0" name="NewCustomers" type="xs:int" />
+      <xs:element minOccurs="0" name="TopCustomers" nillable="true" type="tns:ArrayOfTopCustomer" />
+      <xs:element minOccurs="0" name="TotalCustomers" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerReport" nillable="true" type="tns:CustomerReport" />
+  <xs:complexType name="ArrayOfCustomerActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerActivity" nillable="true" type="tns:CustomerActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerActivity" nillable="true" type="tns:ArrayOfCustomerActivity" />
+  <xs:complexType name="CustomerActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NewRegistrations" type="xs:int" />
+      <xs:element minOccurs="0" name="OrdersPlaced" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerActivity" nillable="true" type="tns:CustomerActivity" />
+  <xs:complexType name="ArrayOfTopCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TopCustomer" nillable="true" type="tns:TopCustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTopCustomer" nillable="true" type="tns:ArrayOfTopCustomer" />
+  <xs:complexType name="TopCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSpent" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TopCustomer" nillable="true" type="tns:TopCustomer" />
+  <xs:complexType name="ServiceResponseOfArrayOfReportEntityItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfReportEntity" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfReportEntity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfReportEntityItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfReportEntityItb6xEvN" />
+  <xs:complexType name="ArrayOfReportEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportEntity" nillable="true" type="tns:ReportEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportEntity" nillable="true" type="tns:ArrayOfReportEntity" />
+  <xs:complexType name="ReportEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneratedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="GeneratedByUser" nillable="true" type="tns:UserEntity" />
+      <xs:element minOccurs="0" name="GeneratedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportEntity" nillable="true" type="tns:ReportEntity" />
+  <xs:complexType name="ServiceResponseOfArrayOfDiscountAItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDiscountA" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfDiscountA" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfDiscountAItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfDiscountAItb6xEvN" />
+  <xs:complexType name="ArrayOfDiscountA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiscountA" nillable="true" type="tns:DiscountA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiscountA" nillable="true" type="tns:ArrayOfDiscountA" />
+  <xs:complexType name="DiscountA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountID" type="xs:int" />
+      <xs:element minOccurs="0" name="DiscountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxUses" type="xs:int" />
+      <xs:element minOccurs="0" name="MinOrderAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UsedCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiscountA" nillable="true" type="tns:DiscountA" />
+  <xs:complexType name="ServiceResponseOfDiscountAItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DiscountA" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:DiscountA" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfDiscountAItb6xEvN" nillable="true" type="tns:ServiceResponseOfDiscountAItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfdecimal" nillable="true" type="tns:ServiceResponseOfdecimal" />
+  <xs:complexType name="ServiceResponseOfArrayOfAddressItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAddress" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfAddressItb6xEvN" nillable="true" type="tns:ServiceResponseOfArrayOfAddressItb6xEvN" />
+  <xs:complexType name="ServiceResponseOfAddressItb6xEvN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Address" Namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfAddressItb6xEvN" nillable="true" type="tns:ServiceResponseOfAddressItb6xEvN" />
+</xs:schema>

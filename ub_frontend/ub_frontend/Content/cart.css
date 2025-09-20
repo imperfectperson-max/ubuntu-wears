@@ -1,0 +1,288 @@
+		/* Reset and base styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		body {
+			background-color: rgb(233, 250, 166);
+			color: indigo;
+			line-height: 1.6;
+		}
+
+		/*Main cart content */
+		.cart-content {
+			display: flex;
+			max-width: 1200px;
+			margin: 2rem auto;
+			padding: 0 20px;
+			gap: 2rem;
+		}
+
+		.cart-items {
+			flex: 2;
+			background: indigo;
+			color:rgb(233, 250, 166);
+			border-radius: 8px;
+			padding: 1.5rem;
+			box-shadow: 0 2px 10px Gold;
+			
+		}
+
+		#cartItemsContainer{
+			color:rgb(233, 250, 166);
+		}
+
+		h1 {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+			color:rgb(233, 250, 166);
+		}
+
+		.offer-item {
+			display: flex;
+			margin-bottom: 1.5rem;
+			padding-bottom: 1.5rem;
+			border-bottom: 1px solid #eee;
+			align-items: center;
+		}
+
+		.item-checkbox {
+			margin-right: 1rem;
+		}
+
+		.item-details {
+			flex-grow: 1;
+		}
+
+		.stock-status {
+			color: #ff5252;
+			font-size: 0.75rem;
+			margin-bottom: 0.5rem;
+			font-weight: 500;
+		}
+
+		.product-description {
+			font-weight: 600;
+			margin-bottom: 0.3rem;
+		}
+
+		.product-size {
+			font-size: 0.75rem;
+			color: #666;
+			margin-bottom: 0.5rem;
+		}
+
+		.discount {
+			color: #ff5252;
+			font-size: 0.875rem;
+			font-weight: 600;
+		}
+
+		.address .btn-discount{
+			background-color:rgb(233, 250, 166);
+			color: indigo;
+			border: none;
+			padding: 0.8rem 0;
+			width: 100%;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		
+		.address .btn-discount:hover {
+			background-color: gold;
+			color: indigo;
+		}
+
+		.quantity-controls {
+			display: flex;
+			align-items: center;
+			margin-left: 1rem;
+		}
+
+		.quantity-btn {
+			width: 30px;
+			height: 30px;
+			border: 1px solid #ddd;
+			background: #f9f9f9;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.quantity-input {
+			width: 40px;
+			height: 30px;
+			text-align: center;
+			border-top: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			border-left: none;
+			border-right: none;
+		}
+
+		.remove-btn {
+			margin-left: 1rem;
+			color: #ff5252;
+			cursor: pointer;
+			background: none;
+			border: none;
+			font-size: 1rem;
+		}
+
+		/* Order summary aside */
+		aside.cart-summary {
+			flex: 1;
+			position: sticky;
+			top: 100px;
+			align-self: flex-start;
+		}
+
+		button.apply:hover {
+			background-color: gold;
+			color: indigo;
+		}
+
+		.order-summary {
+			color: rgb(233, 250, 166);
+			background-color:indigo;
+			border-radius: 8px;
+			padding: 1.5rem;
+			box-shadow: 0 2px 10px gold;
+			margin-bottom: 1.5rem;
+		}
+
+		.order-summary h2 {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			color: rgb(233, 250, 166);
+		}
+		form{
+			margin-bottom: 1.5rem;
+			
+		}
+
+		/*Responsive styles */
+		@media(max-width: 400px) {
+			.cart-content {
+			min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: rgb(233, 250, 166);
+			align-items: center;
+			}
+
+			.cart-items, .order-summary {
+				width: 100%;
+			}
+
+			.quantity-controls {
+				margin-top: 0.5rem;
+				margin-left: 0;
+			}
+		}
+
+		/* Additional styles for the address form */
+        .address {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgb(233, 250, 166);
+        }
+        
+        .address label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: indigo;
+        }
+        
+        .address input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgb(233, 250, 166);
+            border-radius: 4px;
+            font-size: 1rem;
+			background-color: rgb(233, 250, 166);
+			color:indigo
+        }
+        
+        .address input:focus {
+            outline: none;
+            border-color:indigo;
+            box-shadow: 0 0 0 2px gold;
+        }
+        
+        .note {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+		.summary-line {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0.5rem;
+			font-size: 0.875rem;
+		}
+
+		.total {
+		    font-weight: bold;
+		    margin: 1rem 0;
+		    font-size: 1.125rem;
+		    color: indigo;
+		    padding-top: 0.5rem;
+		    border-top: 1px rgb(233, 250, 166);
+		}
+
+		.note {
+			font-size: 0.75rem;
+			color: #ff0000;
+			margin-bottom: 1.5rem;
+			font-style: italic;
+		}
+
+		.checkout-btn {
+			background-color:rgb(233, 250, 166);
+			color: indigo;
+			border: none;
+			padding: 0.8rem 0;
+			width: 100%;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.checkout-btn:hover {
+			background-color: gold;
+		}
+
+		.payment-options {
+			background-color: indigo;
+			border-radius: 8px;
+			padding: 1.5rem;
+			box-shadow: 0 2px 10px gold;
+		}
+
+		.payment-options h2 {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			color: rgb(233, 250, 166);
+		}
+
+		.payment-features {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		.payment-features li {
+			margin-bottom: 0.5rem;
+			font-size: 0.875rem;
+			color:rgb(233, 250, 166);
+		}

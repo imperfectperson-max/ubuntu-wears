@@ -1,0 +1,160 @@
+/* wishlist.css */
+.wishlist-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+.loading{
+    color:indigo;
+}
+
+.wishlist-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wishlist-header h1 {
+    color: indigo;
+    margin-bottom: 0.5rem;
+}
+
+.wishlist-header p {
+    color: indigo;
+    font-size: 1.1rem;
+}
+
+.wishlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.wishlist-item {
+    background:  rgb(233, 250, 166);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.wishlist-item:hover {
+    transform: translateY(-5px);
+}
+
+.wishlist-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.wishlist-item-content {
+    padding: 1.5rem;
+}
+
+.wishlist-item-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: indigo;
+}
+
+.wishlist-item-price {
+    color: indigo;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.wishlist-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.wishlist-btn {
+    flex: 1;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn-add-cart {
+    background: indigo;
+    color:  rgb(233, 250, 166);
+}
+
+.btn-add-cart:hover {
+    background: gold;
+}
+
+.btn-remove {
+    background: indigo;
+    color:  rgb(233, 250, 166);
+}
+
+.btn-remove:hover {
+    background: gold;
+}
+
+.wishlist-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: indigo;
+}
+
+.wishlist-item-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background:  rgb(233, 250, 166);
+    color:indigo;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.wishlist-item-availability {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.in-stock {
+    color: #28a745;
+}
+
+.out-of-stock {
+    color: #dc3545;
+}
+
+.price-alert {
+    background:  rgb(233, 250, 166);
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .wishlist-items {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .wishlist-item-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .wishlist-container {
+        padding: 0 1rem;
+    }
+}

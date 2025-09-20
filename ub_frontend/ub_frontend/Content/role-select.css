@@ -1,0 +1,113 @@
+        .role-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: rgb(233, 250, 166);
+        }
+
+        .role-header {
+            background: indigo;
+            padding: 1rem 2rem;
+            color: rgb(233, 250, 166);
+        }
+
+        .role-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .role-selection {
+            display: flex;
+            gap: 2rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .role-card {
+            flex: 1;
+            background: indigo;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgb(233, 250, 166);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .role-card:hover {
+            transform: translateY(-10px);
+            border-color:rgb(233, 250, 166);;
+            border: 6px;
+            box-shadow: 0 15px 40px gold;
+        }
+
+        .role-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: rgb(233, 250, 166);
+        }
+
+        .role-card h3 {
+            color: rgb(233, 250, 166);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .role-card p {
+            color:rgb(233, 250, 166);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .role-btn {
+            background: rgb(233, 250, 166);
+            color: indigo;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .role-btn:hover {
+            background:gold;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .role-selection {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .role-card {
+                padding: 2rem;
+            }
+
+            .role-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .role-content {
+                padding: 1rem;
+            }
+
+            .role-card {
+                padding: 1.5rem;
+            }
+
+            .role-icon {
+                font-size: 2rem;
+            }
+
+            .role-btn {
+                padding: 10px 25px;
+            }
+        }

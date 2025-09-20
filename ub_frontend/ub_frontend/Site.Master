@@ -1,0 +1,321 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ub_frontend.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <style>
+    .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    }
+
+    .product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    }
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-view-details {
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-view-details:hover {
+    background: #0056b3;
+}
+
+.btn-wishlist {
+    color: #666;
+    font-size: 18px;
+}
+
+.btn-wishlist:hover {
+    color: #ff4757;
+}
+
+.no-products {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.no-products i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="Default.aspx">
+                    <img src="Images/ubuntu_logo.jpeg" alt="ubuntu logo" class="logo-img" />
+                     </a>
+                </div>
+                <div class="search">
+                    <asp:TextBox ID="txtSearch" runat="server" placeholder="Search Nguni..."></asp:TextBox>
+            <asp:Button ID="btnSearch" runat="server" Text="&#xf002;" CssClass="fas search-btn" 
+                OnClientClick="return performSearch();" />
+                </div>
+                <div class="user-actions">
+                    <!-- User account link (changes based on login status) -->
+                    <asp:HyperLink ID="lnkSignIn" runat="server" NavigateUrl="~/Login.aspx">
+                        <i class="fas fa-user"></i><span class="action-text">Sign In</span>
+                    </asp:HyperLink>
+                    
+                    <!-- Register link (hidden when logged in) -->
+                    <asp:HyperLink ID="lnkRegister" runat="server" NavigateUrl="~/Register.aspx" Visible="true">
+                        <i class="fas fa-user-plus"></i><span class="action-text">Register</span>
+                    </asp:HyperLink>
+                    
+                    <!-- User menu items (visible when logged in) -->
+                    <asp:HyperLink ID="lnkOrders" runat="server" NavigateUrl="~/Orders.aspx">
+                        <i class="fas fa-box"></i><span class="action-text">Orders</span>
+                    </asp:HyperLink>
+                    <!-- In your header/navigation area -->
+<div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+	<a href="#" class="nav-link" data-page="cart">Cart</a>
+    <span class="cart-count">0</span>
+</div>
+<div class="wishlist-icon">
+    <i class="fas fa-heart"></i>
+	<a href="#" class="nav-link" data-page="wishlist">Wishlist</a>
+    <span class="wishlist-count">0</span>
+</div>
+                    
+                    <!-- Logout link (visible when logged in) -->
+                    <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Logout.aspx" Visible="false">
+                        <i class="fas fa-sign-out-alt"></i><span class="action-text">Logout</span>
+                    </asp:HyperLink>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="Products.aspx">Universal <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <asp:HyperLink ID="lnkZulu" runat="server" NavigateUrl="~/Products.aspx?category=Zulu">Zulu</asp:HyperLink>
+                            <asp:HyperLink ID="lnkXhosa" runat="server" NavigateUrl="~/Products.aspx?category=Xhosa">Xhosa</asp:HyperLink>
+                            <asp:HyperLink ID="lnkSwazi" runat="server" NavigateUrl="~/Products.aspx?category=Swazi">Swazi</asp:HyperLink>
+                            <asp:HyperLink ID="lnkSouthNdebele" runat="server" NavigateUrl="~/Products.aspx?category=SouthNdebele">South Ndebele</asp:HyperLink>
+                            <asp:HyperLink ID="lnkBaTswana" runat="server" NavigateUrl="~/Products.aspx?category=BaTswana">BaTswana</asp:HyperLink>
+                            <asp:HyperLink ID="lnkBaSotho" runat="server" NavigateUrl="~/Products.aspx?category=BaSotho">BaSotho</asp:HyperLink>
+                            <asp:HyperLink ID="lnkBaPedi" runat="server" NavigateUrl="~/Products.aspx?category=BaPedi">BaPedi</asp:HyperLink>
+                            <asp:HyperLink ID="lnkTsonga" runat="server" NavigateUrl="~/Products.aspx?category=Tsonga">Tsonga</asp:HyperLink>
+                            <asp:HyperLink ID="lnkVenda" runat="server" NavigateUrl="~/Products.aspx?category=Venda">Venda</asp:HyperLink>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="Products.aspx?category=Nguni">Nguni <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <asp:HyperLink ID="lnkNguniZulu" runat="server" NavigateUrl="~/Products.aspx?category=Zulu">Zulu</asp:HyperLink>
+                            <asp:HyperLink ID="lnkNguniXhosa" runat="server" NavigateUrl="~/Products.aspx?category=Xhosa">Xhosa</asp:HyperLink>
+                            <asp:HyperLink ID="lnkNguniSwazi" runat="server" NavigateUrl="~/Products.aspx?category=Swazi">Swazi</asp:HyperLink>
+                            <asp:HyperLink ID="lnkNguniSouthNdebele" runat="server" NavigateUrl="~/Products.aspx?category=SouthNdebele">South Ndebele</asp:HyperLink>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="Products.aspx?category=Sotho-Tswana">Sotho-Tswana <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <asp:HyperLink ID="lnkSothoTswanaBaTswana" runat="server" NavigateUrl="~/Products.aspx?category=BaTswana">BaTswana</asp:HyperLink>
+                            <asp:HyperLink ID="lnkSothoTswanaBaSotho" runat="server" NavigateUrl="~/Products.aspx?category=BaSotho">BaSotho</asp:HyperLink>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="Products.aspx?category=Other">Other Groups <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <asp:HyperLink ID="lnkOtherAfricans" runat="server" NavigateUrl="~/Products.aspx?category=Africans">Africans</asp:HyperLink>
+                            <asp:HyperLink ID="lnkOtherBaPedi" runat="server" NavigateUrl="~/Products.aspx?category=BaPedi">BaPedi</asp:HyperLink>
+                            <asp:HyperLink ID="lnkOtherTsonga" runat="server" NavigateUrl="~/Products.aspx?category=Tsonga">Tsonga</asp:HyperLink>
+                            <asp:HyperLink ID="lnkOtherVenda" runat="server" NavigateUrl="~/Products.aspx?category=Venda">Venda</asp:HyperLink>
+                        </div>
+                    </li>
+
+                    <!-- Admin Menu (visible only to admins) -->
+                    <li class="dropdown" id="adminMenu" runat="server" visible="false">
+                        <a href="#"><i class="fas fa-cog"></i> Admin <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <asp:HyperLink ID="lnkAdminDashboard" runat="server" NavigateUrl="~/Admin/Dashboard.aspx">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </asp:HyperLink>
+                            <asp:HyperLink ID="lnkManageProducts" runat="server" NavigateUrl="~/Admin/Products.aspx">
+                                <i class="fas fa-tshirt"></i> Manage Products
+                            </asp:HyperLink>
+                             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/AddProduct.aspx">
+                                <i class="fas fa-tshirt"></i> Add Products
+                            </asp:HyperLink>
+                            <asp:HyperLink ID="lnkManageDiscounts" runat="server" NavigateUrl="~/Admin/Discount.aspx">
+                                <i class="fas fa-tag"></i> Manage Discounts
+                            </asp:HyperLink>
+                            <asp:HyperLink ID="lnkViewOrders" runat="server" NavigateUrl="~/Admin/Orders.aspx">
+                                <i class="fas fa-shopping-cart"></i> View Orders
+                            </asp:HyperLink>
+                            <asp:HyperLink ID="lnkManageUsers" runat="server" NavigateUrl="~/Admin/Users.aspx">
+                                <i class="fas fa-users"></i> Manage Users
+                            </asp:HyperLink>
+                            <asp:HyperLink ID="lnkReports" runat="server" NavigateUrl="~/Admin/Report.aspx">
+                                <i class="fas fa-chart-bar"></i> Reports
+                            </asp:HyperLink>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Want to make money?</h4>
+                    <ul>
+                        <li><a href="Admin/Register.aspx">Advertise your product</a></li>
+                        <li><a href="Register.aspx">Join Us</a></li>
+                        <li><a href="#">Sell Your Product</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Your Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Join us on</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact US</h4>
+                    <ul>
+                        <li>Email: info@ubuntuwears.com</li>
+                        <li>WhatsApp: +1234567890</li>
+                        <li>Phone: +1234567890</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Supported Payment Methods</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p> &copy; 2025 | Ubuntu Wears. All Right Reserved</p>
+            </div>
+        </footer>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Scripts/main.js"></script>
+    
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
+    <script>
+        function performSearch() {
+            var searchTerm = document.getElementById('<%= txtSearch.ClientID %>').value.trim();
+            if (searchTerm) {
+                window.location.href = 'Products.aspx?search=' + encodeURIComponent(searchTerm);
+            }
+            return false; // Prevent postback
+        }
+        // JavaScript to handle login state UI changes
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if user is logged in
+            const isLoggedIn = <%= Session["UserID"] != null ? "true" : "false" %>;
+
+            if (isLoggedIn) {
+                // User is logged in
+                document.getElementById('lnkSignIn').textContent = 'My Account';
+                document.getElementById('lnkSignIn').href = 'Account.aspx';
+                document.getElementById('lnkRegister').style.display = 'none';
+                document.getElementById('lnkLogout').style.display = 'block';
+
+                // Show user-specific menu items
+                document.getElementById('lnkOrders').style.display = 'block';
+                document.getElementById('lnkWishlist').style.display = 'block';
+            } else {
+                // User is not logged in
+                document.getElementById('lnkSignIn').textContent = 'Sign In';
+                document.getElementById('lnkSignIn').href = 'Login.aspx';
+                document.getElementById('lnkRegister').style.display = 'block';
+                document.getElementById('lnkLogout').style.display = 'none';
+
+                // Hide user-specific menu items
+                document.getElementById('lnkOrders').style.display = 'none';
+                document.getElementById('lnkWishlist').style.display = 'none';
+            }
+
+            // Check if user is admin
+            const isAdmin = <%= Session["IsAdmin"] != null && (bool)Session["IsAdmin"] ? "true" : "false" %>;
+            if (isAdmin) {
+                document.getElementById('adminMenu').style.display = 'block';
+            } else {
+                document.getElementById('adminMenu').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

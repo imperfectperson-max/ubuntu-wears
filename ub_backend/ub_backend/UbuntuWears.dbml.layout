@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.375, 9.25" name="UbuntuWears">
+  <DataContextMoniker Name="/UbuntuWearsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5c839b83-0c95-4faf-a505-e84d3ad59dde" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/AdminManagement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ca9aa45-1714-44d4-9fa4-3c43c46c5525" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" absoluteBounds="2.875, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5eb9b64c-213e-48f4-85bb-51ae9381fbed" absoluteBounds="2.89, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 1.19314697265625); (2.5 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_AdminManagement" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="5c839b83-0c95-4faf-a505-e84d3ad59dde" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1482d426-b933-4584-91da-605694fb57bc" absoluteBounds="5.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Wishlist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75aed6b0-a110-4ad9-8ce1-9c1044b7ec0f" absoluteBounds="5.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 1.53929768880208); (5.75 : 1.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_Wishlist" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="1482d426-b933-4584-91da-605694fb57bc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="867e27f3-e940-4e65-b007-265062e42636" absoluteBounds="6.75, 3, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Cart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e603b5b8-5d4f-4eb0-9a1a-7c6834212b3b" absoluteBounds="6.765, 3.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 1.77005126953125); (5.25 : 1.77005126953125); (5.25 : 2.57859537760417); (7.4999995 : 2.57859537760417); (7.4999995 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_Cart" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="867e27f3-e940-4e65-b007-265062e42636" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b166040f-e66c-4b61-9bb2-788f0bfdff60" absoluteBounds="4.75, 3.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f849278-39dd-4f79-b547-537a19583636" absoluteBounds="4.765, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fe909c5-d824-4875-b2fa-5db0a22ecce5" absoluteBounds="2.625, 3.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/InvoiceItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6d8142c-38ac-4853-a5f0-a7a475019915" absoluteBounds="2.64, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7509cf84-6127-45ca-aaca-51196120b29b" absoluteBounds="0.5, 2.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67c58a60-6c1b-488e-a5ab-5885ec58fc68" absoluteBounds="0.51499999999999968, 2.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.52485270182292); (2.625 : 4.52485270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Invoice/Invoice_InvoiceItem" />
+      <nodes>
+        <classShapeMoniker Id="7509cf84-6127-45ca-aaca-51196120b29b" />
+        <classShapeMoniker Id="9fe909c5-d824-4875-b2fa-5db0a22ecce5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52117e98-e380-432a-b0f5-bc0b88dfe525" absoluteBounds="6.25, 5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/OrderItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e5fa492-d9c6-416c-a050-6b9f867155ed" absoluteBounds="6.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d71a54a3-2992-468c-9e57-fbf36a46d646" absoluteBounds="8.25, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Payment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c71fc12-dadc-4054-9238-9fac167c8d0c" absoluteBounds="8.265, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4edc5b85-0986-45e8-9f00-a418b298b380" absoluteBounds="4.25, 6.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Report" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15e7b712-84c1-4bc0-891b-850de053934d" absoluteBounds="4.265, 6.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.31250125 : 3.0401025390625); (4.31250125 : 3.5625); (4.6875 : 3.5625); (4.6875 : 6.0625); (4.1875 : 6.0625); (4.1875 : 7.58735270182292); (4.25 : 7.58735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_Report" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="4edc5b85-0986-45e8-9f00-a418b298b380" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9eaa9caf-4079-4a27-9247-cbbe95e61dbe" absoluteBounds="5.375, 4.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af873be4-5a5e-40e4-8d3a-c44113e94cee" absoluteBounds="5.39, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 5.85659912109375); (4.77083333333333 : 5.85659912109375 : JumpStart); (4.60416666666667 : 5.85659912109375 : JumpEnd); (1.5 : 5.85659912109375); (1.5 : 5.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Order/Order_Invoice" />
+      <nodes>
+        <classShapeMoniker Id="9eaa9caf-4079-4a27-9247-cbbe95e61dbe" />
+        <classShapeMoniker Id="7509cf84-6127-45ca-aaca-51196120b29b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.375 : 4.75); (6.375 : 4.5); (7.25 : 4.5); (7.25 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Order/Order_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="9eaa9caf-4079-4a27-9247-cbbe95e61dbe" />
+        <classShapeMoniker Id="52117e98-e380-432a-b0f5-bc0b88dfe525" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 6.96559895833333); (9.25 : 6.96559895833333); (9.25 : 2.65549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Order/Order_Payment" />
+      <nodes>
+        <classShapeMoniker Id="9eaa9caf-4079-4a27-9247-cbbe95e61dbe" />
+        <classShapeMoniker Id="d71a54a3-2992-468c-9e57-fbf36a46d646" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.8124995 : 3.0401025390625); (3.8124995 : 3.5625); (4.71875 : 3.5625); (4.71875 : 5.36727126302083); (5.375 : 5.36727126302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_Order" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="9eaa9caf-4079-4a27-9247-cbbe95e61dbe" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="55c76eed-d7f8-489f-86ed-d5f62a104f37" absoluteBounds="15.125, 2, 2, 2.5401025390625">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Address" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cafdd660-6810-4abd-bba0-2365ab3f97de" absoluteBounds="15.14, 2.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.31249775 : 3.0401025390625); (3.31249775 : 3.1026025390625); (4.9375 : 3.1026025390625); (4.9375 : 2.9375); (9.16666666666667 : 2.9375 : JumpStart); (9.33333333333333 : 2.9375 : JumpEnd); (11.6875 : 2.9375); (11.6875 : 3.6795068359375); (14.3385416666667 : 3.6795068359375 : JumpStart); (14.5052083333333 : 3.6795068359375 : JumpEnd); (15.03125 : 3.6795068359375); (15.03125 : 3.27005126953125); (15.125 : 3.27005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/User/User_Address" />
+      <nodes>
+        <classShapeMoniker Id="b96dcaad-20ae-41be-a0be-5f7a5eaf012d" />
+        <classShapeMoniker Id="55c76eed-d7f8-489f-86ed-d5f62a104f37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e27c6bb9-3877-4adf-92bb-ae248db8cf35" absoluteBounds="11.75, 0.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Discount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe3e78c5-4ffa-42a5-bdc7-f78f87ab1d7d" absoluteBounds="11.765, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66415648-3fc2-416b-8bd2-b741f1f6ec60" absoluteBounds="13.25, 4.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/UbuntuWearsDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c20d8c2-f635-4663-8045-c7de8f641c76" absoluteBounds="13.265, 4.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.421875 : 4.5); (14.421875 : 0.4375); (7.84375 : 0.4375); (7.84375 : 1.53929768880208); (7.75 : 1.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Product/Product_Wishlist" />
+      <nodes>
+        <classShapeMoniker Id="66415648-3fc2-416b-8bd2-b741f1f6ec60" />
+        <classShapeMoniker Id="1482d426-b933-4584-91da-605694fb57bc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 4.5); (12.875 : 4.125); (9.33333333333333 : 4.125 : JumpStart); (9.16666666666667 : 4.125 : JumpEnd); (9.125 : 4.125); (9.125 : 5.14453358158053); (8.75 : 4.76953358158053)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Product/Product_Cart" />
+      <nodes>
+        <classShapeMoniker Id="66415648-3fc2-416b-8bd2-b741f1f6ec60" />
+        <classShapeMoniker Id="867e27f3-e940-4e65-b007-265062e42636" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 4.94044840494792); (9.33333333333333 : 4.94044840494792 : JumpStart); (9.04166666666667 : 4.94044840494792 : JumpEnd); (9.00424815670072 : 4.94044840494792 : JumpStart); (8.83758149003405 : 4.94044840494792 : JumpEnd); (4.80208333333333 : 4.94044840494792 : JumpStart); (4.63541666666667 : 4.94044840494792 : JumpEnd); (4.625 : 4.94044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Product/Product_InvoiceItem" />
+      <nodes>
+        <classShapeMoniker Id="66415648-3fc2-416b-8bd2-b741f1f6ec60" />
+        <classShapeMoniker Id="9fe909c5-d824-4875-b2fa-5db0a22ecce5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 5.88544840494792); (9.33333333333333 : 5.88544840494792 : JumpStart); (9.16666666666667 : 5.88544840494792 : JumpEnd); (8.25 : 5.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UbuntuWearsDataContext/Product/Product_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="66415648-3fc2-416b-8bd2-b741f1f6ec60" />
+        <classShapeMoniker Id="52117e98-e380-432a-b0f5-bc0b88dfe525" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

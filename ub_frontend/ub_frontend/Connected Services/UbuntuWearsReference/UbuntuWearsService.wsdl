@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UbuntuWearsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ub_backend" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUbuntuWearsService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_IsAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_IsAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProductsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProductsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetFeaturedProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturedProducts" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetFeaturedProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturedProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SearchProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProducts" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SearchProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCart" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItem" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_RemoveFromCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCart" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_RemoveFromCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ClearCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCart" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ClearCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUserOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUserOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetRecentOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecentOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetRecentOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecentOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetOrdersByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetOrdersByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ProcessPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessPayment" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ProcessPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddToWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_AddToWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_RemoveFromWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_RemoveFromWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetDashboardStats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStats" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetDashboardStats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboardStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAllOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAllOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateSalesReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSalesReport" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateSalesReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSalesReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateInventoryReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateInventoryReport" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateInventoryReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateInventoryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateCustomerReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCustomerReport" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GenerateCustomerReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCustomerReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetGeneratedReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeneratedReports" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetGeneratedReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeneratedReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAdminUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAdminUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAllDiscounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDiscounts" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAllDiscounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDiscountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_CreateDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_CreateDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_UpdateDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ToggleDiscountStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToggleDiscountStatus" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ToggleDiscountStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToggleDiscountStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ApplyDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_ApplyDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUserAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetUserAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_GetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SaveAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAddress" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SaveAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddress" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_DeleteAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SetDefaultAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDefaultAddress" />
+  </wsdl:message>
+  <wsdl:message name="IUbuntuWearsService_SetDefaultAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDefaultAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUbuntuWearsService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/Login" message="tns:IUbuntuWearsService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/LoginResponse" message="tns:IUbuntuWearsService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/Register" message="tns:IUbuntuWearsService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/RegisterResponse" message="tns:IUbuntuWearsService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/Logout" message="tns:IUbuntuWearsService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/LogoutResponse" message="tns:IUbuntuWearsService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/IsAdmin" message="tns:IUbuntuWearsService_IsAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/IsAdminResponse" message="tns:IUbuntuWearsService_IsAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateUser" message="tns:IUbuntuWearsService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateUserResponse" message="tns:IUbuntuWearsService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUser" message="tns:IUbuntuWearsService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUserResponse" message="tns:IUbuntuWearsService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProducts" message="tns:IUbuntuWearsService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProductsResponse" message="tns:IUbuntuWearsService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProductsByCategory" message="tns:IUbuntuWearsService_GetProductsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProductsByCategoryResponse" message="tns:IUbuntuWearsService_GetProductsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturedProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetFeaturedProducts" message="tns:IUbuntuWearsService_GetFeaturedProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetFeaturedProductsResponse" message="tns:IUbuntuWearsService_GetFeaturedProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProduct" message="tns:IUbuntuWearsService_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetProductResponse" message="tns:IUbuntuWearsService_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/SearchProducts" message="tns:IUbuntuWearsService_SearchProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/SearchProductsResponse" message="tns:IUbuntuWearsService_SearchProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddProduct" message="tns:IUbuntuWearsService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddProductResponse" message="tns:IUbuntuWearsService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateProduct" message="tns:IUbuntuWearsService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateProductResponse" message="tns:IUbuntuWearsService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteProduct" message="tns:IUbuntuWearsService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteProductResponse" message="tns:IUbuntuWearsService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetCartItems" message="tns:IUbuntuWearsService_GetCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetCartItemsResponse" message="tns:IUbuntuWearsService_GetCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddToCart" message="tns:IUbuntuWearsService_AddToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddToCartResponse" message="tns:IUbuntuWearsService_AddToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateCartItem" message="tns:IUbuntuWearsService_UpdateCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateCartItemResponse" message="tns:IUbuntuWearsService_UpdateCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/RemoveFromCart" message="tns:IUbuntuWearsService_RemoveFromCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/RemoveFromCartResponse" message="tns:IUbuntuWearsService_RemoveFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/ClearCart" message="tns:IUbuntuWearsService_ClearCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/ClearCartResponse" message="tns:IUbuntuWearsService_ClearCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUserOrders" message="tns:IUbuntuWearsService_GetUserOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUserOrdersResponse" message="tns:IUbuntuWearsService_GetUserOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetRecentOrders" message="tns:IUbuntuWearsService_GetRecentOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetRecentOrdersResponse" message="tns:IUbuntuWearsService_GetRecentOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetOrdersByCategory" message="tns:IUbuntuWearsService_GetOrdersByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetOrdersByCategoryResponse" message="tns:IUbuntuWearsService_GetOrdersByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetOrder" message="tns:IUbuntuWearsService_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetOrderResponse" message="tns:IUbuntuWearsService_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/CreateOrder" message="tns:IUbuntuWearsService_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/CreateOrderResponse" message="tns:IUbuntuWearsService_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateOrderStatus" message="tns:IUbuntuWearsService_UpdateOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateOrderStatusResponse" message="tns:IUbuntuWearsService_UpdateOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/ProcessPayment" message="tns:IUbuntuWearsService_ProcessPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/ProcessPaymentResponse" message="tns:IUbuntuWearsService_ProcessPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetWishlist" message="tns:IUbuntuWearsService_GetWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetWishlistResponse" message="tns:IUbuntuWearsService_GetWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddToWishlist" message="tns:IUbuntuWearsService_AddToWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/AddToWishlistResponse" message="tns:IUbuntuWearsService_AddToWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/RemoveFromWishlist" message="tns:IUbuntuWearsService_RemoveFromWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/RemoveFromWishlistResponse" message="tns:IUbuntuWearsService_RemoveFromWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetDashboardStats" message="tns:IUbuntuWearsService_GetDashboardStats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetDashboardStatsResponse" message="tns:IUbuntuWearsService_GetDashboardStats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUsers" message="tns:IUbuntuWearsService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUsersResponse" message="tns:IUbuntuWearsService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAllOrders" message="tns:IUbuntuWearsService_GetAllOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAllOrdersResponse" message="tns:IUbuntuWearsService_GetAllOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateInvoice" message="tns:IUbuntuWearsService_GenerateInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateInvoiceResponse" message="tns:IUbuntuWearsService_GenerateInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetInvoices" message="tns:IUbuntuWearsService_GetInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetInvoicesResponse" message="tns:IUbuntuWearsService_GetInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetInvoice" message="tns:IUbuntuWearsService_GetInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetInvoiceResponse" message="tns:IUbuntuWearsService_GetInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateSalesReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateSalesReport" message="tns:IUbuntuWearsService_GenerateSalesReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateSalesReportResponse" message="tns:IUbuntuWearsService_GenerateSalesReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateInventoryReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateInventoryReport" message="tns:IUbuntuWearsService_GenerateInventoryReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateInventoryReportResponse" message="tns:IUbuntuWearsService_GenerateInventoryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCustomerReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateCustomerReport" message="tns:IUbuntuWearsService_GenerateCustomerReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GenerateCustomerReportResponse" message="tns:IUbuntuWearsService_GenerateCustomerReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeneratedReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetGeneratedReports" message="tns:IUbuntuWearsService_GetGeneratedReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetGeneratedReportsResponse" message="tns:IUbuntuWearsService_GetGeneratedReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAdminUsers" message="tns:IUbuntuWearsService_GetAdminUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAdminUsersResponse" message="tns:IUbuntuWearsService_GetAdminUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiscounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAllDiscounts" message="tns:IUbuntuWearsService_GetAllDiscounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAllDiscountsResponse" message="tns:IUbuntuWearsService_GetAllDiscounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetDiscount" message="tns:IUbuntuWearsService_GetDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetDiscountResponse" message="tns:IUbuntuWearsService_GetDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/CreateDiscount" message="tns:IUbuntuWearsService_CreateDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/CreateDiscountResponse" message="tns:IUbuntuWearsService_CreateDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateDiscount" message="tns:IUbuntuWearsService_UpdateDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/UpdateDiscountResponse" message="tns:IUbuntuWearsService_UpdateDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleDiscountStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/ToggleDiscountStatus" message="tns:IUbuntuWearsService_ToggleDiscountStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/ToggleDiscountStatusResponse" message="tns:IUbuntuWearsService_ToggleDiscountStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteDiscount" message="tns:IUbuntuWearsService_DeleteDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteDiscountResponse" message="tns:IUbuntuWearsService_DeleteDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/ApplyDiscount" message="tns:IUbuntuWearsService_ApplyDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/ApplyDiscountResponse" message="tns:IUbuntuWearsService_ApplyDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUserAddresses" message="tns:IUbuntuWearsService_GetUserAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetUserAddressesResponse" message="tns:IUbuntuWearsService_GetUserAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAddress" message="tns:IUbuntuWearsService_GetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/GetAddressResponse" message="tns:IUbuntuWearsService_GetAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/SaveAddress" message="tns:IUbuntuWearsService_SaveAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/SaveAddressResponse" message="tns:IUbuntuWearsService_SaveAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteAddress" message="tns:IUbuntuWearsService_DeleteAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/DeleteAddressResponse" message="tns:IUbuntuWearsService_DeleteAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUbuntuWearsService/SetDefaultAddress" message="tns:IUbuntuWearsService_SetDefaultAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUbuntuWearsService/SetDefaultAddressResponse" message="tns:IUbuntuWearsService_SetDefaultAddress_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUbuntuWearsService" type="tns:IUbuntuWearsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAdmin">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/IsAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetProductsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturedProducts">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetFeaturedProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProducts">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/SearchProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItems">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/AddToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItem">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/UpdateCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCart">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/RemoveFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCart">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/ClearCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrders">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetUserOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentOrders">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetRecentOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCategory">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetOrdersByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPayment">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/ProcessPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWishlist">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToWishlist">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/AddToWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromWishlist">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/RemoveFromWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardStats">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetDashboardStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateInvoice">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GenerateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoices">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoice">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateSalesReport">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GenerateSalesReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateInventoryReport">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GenerateInventoryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCustomerReport">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GenerateCustomerReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeneratedReports">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetGeneratedReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminUsers">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetAdminUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiscounts">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetAllDiscounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscount">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscount">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/CreateDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscount">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/UpdateDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleDiscountStatus">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/ToggleDiscountStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscount">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/DeleteDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyDiscount">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/ApplyDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddresses">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetUserAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/GetAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAddress">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/SaveAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/DeleteAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultAddress">
+      <soap:operation soapAction="http://tempuri.org/IUbuntuWearsService/SetDefaultAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UbuntuWearsService">
+    <wsdl:port name="BasicHttpBinding_IUbuntuWearsService" binding="tns:BasicHttpBinding_IUbuntuWearsService">
+      <soap:address location="http://localhost:52145/UbuntuWearsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2210f4ae-5b59-4fd4-ab79-8b107bc69f6f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52145/UbuntuWearsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UbuntuWearsService.xsd" MetadataType="Schema" ID="3279ebac-c60b-4e00-ade3-212051120980" SourceId="1" SourceUrl="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UbuntuWearsService.disco" MetadataType="Disco" ID="64e3a226-fb7f-47fc-931d-0fdd26427869" SourceId="1" SourceUrl="http://localhost:52145/UbuntuWearsService.svc?disco" />
+    <MetadataFile FileName="UbuntuWearsService1.xsd" MetadataType="Schema" ID="027c2e45-d1f4-449b-8c3d-96b25c8228e5" SourceId="1" SourceUrl="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UbuntuWearsService2.xsd" MetadataType="Schema" ID="21c15be3-20c5-4795-b4d9-d2ba4fa9aa4c" SourceId="1" SourceUrl="http://localhost:52145/UbuntuWearsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UbuntuWearsService.wsdl" MetadataType="Wsdl" ID="0d4fa140-a210-4980-8dfc-12936a7a4e1d" SourceId="1" SourceUrl="http://localhost:52145/UbuntuWearsService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
