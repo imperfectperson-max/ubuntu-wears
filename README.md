@@ -35,4 +35,4 @@ An Amazon-style e-commerce platform specializing in authentic, stylish tradition
 
 ## 👥 Academic Note
 
-This project was developed as the final group project for the module **IFM2B10** in 2025.
+This project was developed as the final project for the module **IFM2B10** in 2025.
