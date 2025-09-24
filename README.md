@@ -1,5 +1,8 @@
 # Ubuntu Wears
 
+Video link:
+https://youtu.be/I7w2YGeEP_Y
+
 An Amazon-style e-commerce platform specializing in authentic, stylish traditional attire, built with ASP.NET Web Forms and a WCF Service.
 
 ## 🚀 Features
@@ -28,7 +31,7 @@ An Amazon-style e-commerce platform specializing in authentic, stylish tradition
 ## 🔧 Getting Started
 
 1.  Clone the repository: `git clone https://github.com/imperfectperson-max/ubuntu-wears.git`
-2.  Open the `ub_frontend.sln` solution file in Visual Studio.
+2.  Open the `ub_backend.sln` and then `ub_frontend.sln` solution file in Visual Studio.
 3.  Restore NuGet packages.
 4.  Build the solution.
 5.  Run the project (IIS Express).
